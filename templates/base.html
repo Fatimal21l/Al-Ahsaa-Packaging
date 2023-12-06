@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html dir="rtl" lang="ar">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
+        <script defer src="https://unpkg.com/preline@2.0.2/dist/collapse.js"></script>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+        <link rel="stylesheet" href="/static/css/output.css">
+        <link rel="shortcut icon" href="/static/favicon.ico" type="image/x-icon">
+        <title>{% block title %}{% endblock title %}</title>
+    </head>
+    <body class="font-['Cairo'] bg-fixed bg-[url('/static/imgs/background.png')] bg-cover min-h-screen flex flex-col">
+        {% include "partials/header.html" %}
+        <main class="flex-1 flex flex-col">
+            {% block content %}{% endblock content %}
+        </main>
+        {% include "partials/footer.html" %}
+        <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+        {% block extra_script %}{% endblock extra_script %}
+    </body>
+</html>

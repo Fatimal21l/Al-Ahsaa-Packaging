@@ -1,0 +1,70 @@
+{% extends "base.html" %} {% block title %}إنشاء حساب{% endblock title %} {%
+block content %}
+<div class="flex-1 flex justify-center items-center lg:px-8 px-4">
+  <form
+    class="bg-primary-foreground/40 backdrop-blur flex flex-col gap-5 w-full max-w-md lg:p-8 md:p-6 p-4 rounded-lg shadow-lg sm:text-base text-sm my-20"
+    method="post"
+  >
+    <div class="flex flex-col gap-2">
+      <label class="font-bold" for="email">البريد الإلكتروني</label>
+      <input
+        placeholder="example@gmail.com"
+        class="rounded-md border-none"
+        type="email"
+        name="email"
+        id="email"
+        required
+      />
+    </div>
+    <div class="flex flex-col gap-2">
+      <label class="font-bold" for="password">كلمة المرور</label>
+      <input
+        placeholder="**********"
+        class="rounded-md border-none"
+        type="password"
+        name="password"
+        id="password"
+        required
+      />
+    </div>
+    <div class="flex flex-col gap-2">
+      <label class="font-bold" for="password-confirm">تأكيد كلمة المرور</label>
+      <input
+        placeholder="**********"
+        class="rounded-md border-none"
+        type="password"
+        name="password-confirm"
+        id="password-confirm"
+        required
+      />
+    </div>
+    <button
+      type="submit"
+      class="w-fit mt-3 py-3 px-4 inline-flex items-center gap-x-2 text-sm font-semibold rounded-lg border border-transparent bg-primary text-primary-foreground hover:bg-primary-dark transition-colors disabled:opacity-50 disabled:pointer-events-none"
+    >
+      إنشاء الحساب
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke-width="1.5"
+        stroke="currentColor"
+        class="w-5 h-5"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          d="M12 4.5v15m7.5-7.5h-15"
+        />
+      </svg>
+    </button>
+    <p>
+      لديك حساب بالفعل ؟ &nbsp;&nbsp;<a
+        class="font-bold hover:underline"
+        href="/login"
+        >تسجيل الدخول</a
+      >
+    </p>
+  </form>
+</div>
+{% endblock content %}

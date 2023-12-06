@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block title %}بكج {{ package.name }}{% endblock title %}
+
+{% block content %}
+    <div class="flex-1 flex justify-center items-center bg-white py-10 lg:px-8 px-4">
+        <div class="flex flex-col lg:gap-6 md:gap-5 sm:gap-4 gap-3 max-w-4xl">
+            <h2 class="font-bold lg:text-4xl md:text-3xl sm:text-2xl text-xl text-primary">
+                بكج {{ package.name }}
+            </h2>
+            <ul class="lg:space-y-4 md:space-y-3 space-y-2 lg:text-xl md:text-lg text-base list-disc pr-4">
+                {% for feature in package.features %}
+                    <li>
+                        {{ feature }}
+                    </li>
+                {% endfor %}
+            </ul>
+            <a href="/checkout/{{ package.id }}" class="w-fit mt-3 py-3 px-4 inline-flex items-center md:gap-x-2 gap-x-1 md:text-sm text-xs font-semibold rounded-lg border border-transparent bg-primary text-primary-foreground hover:bg-primary-dark transition-colors disabled:opacity-50 disabled:pointer-events-none">
+                اختيار <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="md:w-6 md:h-6 w-5 h-5">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>  
+            </a>
+        </div>
+    </div>
+{% endblock content %}

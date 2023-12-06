@@ -1,0 +1,130 @@
+<header>
+  <nav
+    class="bg-primary text-primary-foreground flex lg:flex-row flex-col justify-between items-center shadow-lg lg:px-8 px-4"
+  >
+    <div class="flex justify-between items-center w-full">
+      <a href="/" class="flex items-center">
+        <img class="w-20" src="/static/imgs/logo.png" alt="logo" />
+        <h1 class="text-end w-fit leading-5">
+          <strong>Al AHSAA <br />PACKAGING</strong>
+        </h1>
+      </a>
+      <div class="lg:hidden">
+        <button
+          type="button"
+          class="hs-collapse-toggle p-2 inline-flex justify-center items-center gap-x-2 rounded-lg border border-gray-200 shadow-sm hover:bg-primary-foreground/10 disabled:opacity-50 disabled:pointer-events-none"
+          data-hs-collapse="#navbar-with-collapse"
+          aria-controls="navbar-with-collapse"
+          aria-label="Toggle navigation"
+        >
+          <svg
+            class="hs-collapse-open:hidden flex-shrink-0 w-6 h-6"
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <line x1="3" x2="21" y1="6" y2="6" />
+            <line x1="3" x2="21" y1="12" y2="12" />
+            <line x1="3" x2="21" y1="18" y2="18" />
+          </svg>
+          <svg
+            class="hs-collapse-open:block hidden flex-shrink-0 w-6 h-6"
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path d="M18 6 6 18" />
+            <path d="m6 6 12 12" />
+          </svg>
+        </button>
+      </div>
+    </div>
+    <div
+      id="navbar-with-collapse"
+      class="hidden basis-full grow lg:block w-full px-4"
+    >
+      <div
+        class="flex flex-col gap-5 mt-5 lg:flex-row lg:items-center lg:justify-end lg:mt-0 lg:ps-5"
+      >
+        <form class="relative">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+            class="w-6 h-6 absolute top-1/2 right-2 -translate-y-1/2"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z"
+            />
+          </svg>
+          <input
+            placeholder="بحث"
+            class="bg-transparent border-primary-foreground focus:border-primary-foreground focus:ring-primary-foreground rounded-full pr-10 placeholder:text-primary-foreground/70"
+            type="text"
+          />
+        </form>
+        <ul class="flex lg:flex-row flex-col whitespace-nowrap gap-5">
+          <li>
+            <a
+              class="lg:hover:underline lg:hover:bg-transparent lg:hover:text-primary-foreground lg:hover:underline-offset-[6px] hover:bg-primary-foreground hover:text-primary rounded-lg lg:p-0 p-1"
+              href="/"
+              >الصفحة الرئيسية</a
+            >
+          </li>
+          <li>
+            <a
+              class="lg:hover:underline lg:hover:bg-transparent lg:hover:text-primary-foreground lg:hover:underline-offset-[6px] hover:bg-primary-foreground hover:text-primary rounded-lg lg:p-0 p-1"
+              href="/about"
+              >من نحن</a
+            >
+          </li>
+          <li>
+            <a
+              class="lg:hover:underline lg:hover:bg-transparent lg:hover:text-primary-foreground lg:hover:underline-offset-[6px] hover:bg-primary-foreground hover:text-primary rounded-lg lg:p-0 p-1"
+              href="/packages"
+              >البكجات</a
+            >
+          </li>
+          {% if not logged_in %}
+          <li>
+            <a
+              class="lg:hover:underline lg:hover:bg-transparent lg:hover:text-primary-foreground lg:hover:underline-offset-[6px] hover:bg-primary-foreground hover:text-primary rounded-lg lg:p-0 p-1"
+              href="/login"
+              >تسجيل الدخول</a
+            >
+          </li>
+          {% else %}
+          <li>
+            <a
+              class="lg:hover:underline lg:hover:bg-transparent lg:hover:text-primary-foreground lg:hover:underline-offset-[6px] hover:bg-primary-foreground hover:text-primary rounded-lg lg:p-0 p-1"
+              href="{{ url_for('logout')}}"
+              >تسجيل الخروج</a
+            >
+          </li>
+          {% endif %}
+        </ul>
+        <button
+          class="w-fit bg-primary-foreground hover:bg-transparent transition-colors border-primary-foreground border-2 text-primary hover:text-primary-foreground font-bold h-9 px-4 rounded-full lg:mb-0 mb-6"
+        >
+          ENG
+        </button>
+      </div>
+    </div>
+  </nav>
+</header>
